@@ -20,9 +20,9 @@ Modify the constructor method according to the selected communication protocol.
 #SPI
 (SPI_HandleTypeDef *hspi, GPIO_TypeDef *GPIOX, uint16_t CsPin);
 
-hspi---> SPIHandleTypedef
-GPIOX---> GPIO peripheral of Chip Select pin 
-CsPin ---> GPIO pin of Chip Select pin
+hspi---> SPIHandleTypedef.
+GPIOX---> GPIO peripheral of Chip Select pin .
+CsPin ---> GPIO pin of Chip Select pin.
 
 
 #I2C

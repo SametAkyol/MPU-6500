@@ -103,14 +103,7 @@ int main(void)
   cfg.a_cfg=_2g;
   cfg.g_cfg=dps_250;
   mpu.init(cfg);
-  	uint8_t id=mpu.readID();
-
-
-  	float temp ;
-  	int16_t ax, ay, az, gx, gy, gz;
-  	float ax1, ay2, az3;
-  	int len;
-  	char terminal[100];
+  uint8_t id=mpu.readID();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -120,12 +113,6 @@ int main(void)
 		/* USER CODE END WHILE */
 			mpu.readAccel(&ax, &ay, &az);
 			temp = mpu.ReadTemp();
-			ax1 = (float) ax / 16384.0;
-			ay2 = (float) ay / 16384.0;
-			az3 = (float) az / 16384.0;
-			len = sprintf(terminal, "spi ax=%.3f , ay=%.3f , az=%.3f temp= %.3f \n",
-					ax1, ay2, az3, temp);
-			HAL_UART_Transmit(&huart2, (uint8_t*) terminal, len, 100);
 			HAL_Delay(1000);
 			/* USER CODE BEGIN 3 */
   }
